@@ -2,7 +2,7 @@ import os
 import platform
 import signal
 from transformers import AutoTokenizer, AutoModel
-import readline
+# import readline
 
 tokenizer = AutoTokenizer.from_pretrained("THUDM/chatglm2-6b", trust_remote_code=True)
 model = AutoModel.from_pretrained("THUDM/chatglm2-6b", trust_remote_code=True).cuda()
