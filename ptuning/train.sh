@@ -23,5 +23,5 @@ torchrun --standalone --nnodes=1 --nproc-per-node=$NUM_GPUS main.py \
     --logging_steps 10 \
     --save_steps 100 \
     --learning_rate $LR \
-    --pre_seq_len $PRE_SEQ_LEN
+    --pre_seq_len $PRE_SEQ_LEN \
     --quantization_bit 4

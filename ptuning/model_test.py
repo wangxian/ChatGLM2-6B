@@ -31,7 +31,7 @@ model.transformer.prefix_encoder.load_state_dict(new_prefix_state_dict)
 
 
 # Comment out the following line if you don't use quantization
-model = model.quantize(8)
+model = model.quantize(4)
 model = model.half().cuda()
 
 model = model.eval()
