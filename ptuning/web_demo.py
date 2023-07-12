@@ -92,7 +92,7 @@ def reset_state():
 
 
 with gr.Blocks() as demo:
-    gr.HTML("""<h1 align="center">ChatGLM2-6B</h1>""")
+    gr.HTML("""<h1 align="center">语言大模型</h1>""")
 
     chatbot = gr.Chatbot()
     with gr.Row():
@@ -161,7 +161,7 @@ def main():
         model.transformer.prefix_encoder.float()
     
     model = model.eval()
-    demo.queue().launch(share=False, inbrowser=True)
+    demo.queue().launch(share=False, inbrowser=True, server_port=7861, server_name="0.0.0.0")
 
 
 

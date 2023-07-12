@@ -85,7 +85,7 @@ def reset_state():
 
 
 with gr.Blocks() as demo:
-    gr.HTML("""<h1 align="center">ChatGLM2-6B</h1>""")
+    gr.HTML("""<h1 align="center">大语言模型-演示</h1>""")
 
     chatbot = gr.Chatbot()
     with gr.Row():
@@ -110,4 +110,4 @@ with gr.Blocks() as demo:
 
     emptyBtn.click(reset_state, outputs=[chatbot, history, past_key_values], show_progress=True)
 
-demo.queue().launch(share=False, inbrowser=False)
+demo.queue().launch(share=False, inbrowser=False, server_port=7861, server_name="0.0.0.0")
