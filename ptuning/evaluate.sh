@@ -1,6 +1,6 @@
 PRE_SEQ_LEN=128
 CHECKPOINT=adgen-chatglm2-6b-pt-128-2e-2
-STEP=3000
+STEP=300
 NUM_GPUS=1
 
 torchrun --standalone --nnodes=1 --nproc-per-node=$NUM_GPUS main.py \
@@ -19,4 +19,5 @@ torchrun --standalone --nnodes=1 --nproc-per-node=$NUM_GPUS main.py \
     --per_device_eval_batch_size 1 \
     --predict_with_generate \
     --pre_seq_len $PRE_SEQ_LEN \
-    --quantization_bit 4
+
+# --quantization_bit 4

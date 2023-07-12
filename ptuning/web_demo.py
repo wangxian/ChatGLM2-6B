@@ -86,10 +86,8 @@ def predict(input, chatbot, max_length, top_p, temperature, history, past_key_va
 def reset_user_input():
     return gr.update(value='')
 
-
 def reset_state():
     return [], [], None
-
 
 with gr.Blocks() as demo:
     gr.HTML("""<h1 align="center">语言大模型</h1>""")
@@ -116,7 +114,6 @@ with gr.Blocks() as demo:
     submitBtn.click(reset_user_input, [], [user_input])
 
     emptyBtn.click(reset_state, outputs=[chatbot, history, past_key_values], show_progress=True)
-
 
 def main():
     global model, tokenizer
@@ -155,11 +152,11 @@ def main():
         model = model.quantize(model_args.quantization_bit)
 
     model = model.cuda()
-    
+
     if model_args.pre_seq_len is not None:
         # P-tuning v2
         model.transformer.prefix_encoder.float()
-    
+
     model = model.eval()
     demo.queue().launch(share=False, inbrowser=True, server_port=7861, server_name="0.0.0.0")
 
