@@ -36,6 +36,6 @@ model = model.half().cuda()
 
 model = model.eval()
 
-response, history = model.chat(tokenizer, "你好", history=[])
+response, history = model.chat(tokenizer, "你好，睡眠不好怎么办？", history=[])
 
 print(response)
